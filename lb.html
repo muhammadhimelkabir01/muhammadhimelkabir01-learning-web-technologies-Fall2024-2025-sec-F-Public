@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LAB-7.2 lab</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    form {
+      background: #f8f8f8;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+    input, select {
+      margin: 5px;
+      padding: 5px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>LAB-7.2 Lab JavaScript</h1>
+
+  <!--name-->
+  <form onsubmit="return validateName()">
+    Name: <input type="text" id="name"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!--mail-->
+  <form onsubmit="return validateEmail()">
+    Email: <input type="text" id="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!--Gndr-->
+  <form onsubmit="return validateGender()">
+    <fieldset>
+      <legend>Gender</legend>
+      <input type="radio" id="male" name="gender" value="Male"> Male
+      <input type="radio" id="female" name="gender" value="Female"> Female
+      <input type="radio" id="other" name="gender" value="Other"> Other
+    </fieldset>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!--DOB-->
+  <form onsubmit="return validateDate()">
+    <fieldset>
+      <legend>Date of Birth (dd/mm/yyyy)</legend>
+      <input type="text" id="dd" size="2" placeholder="dd"> /
+      <input type="text" id="mm" size="2" placeholder="mm"> /
+      <input type="text" id="yy" size="4" placeholder="yyyy">
+    </fieldset>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!--Blood Grp-->
+  <form onsubmit="return validateBloodGroup()">
+    Blood Group:
+    <select id="blood">
+      <option value="">A+</option>
+      <option>A-</option>
+      <option>B+</option>
+      <option>B-</option>
+      <option>AB+</option>
+      <option>AB-</option>
+      <option>O+</option>
+      <option>O-</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!--Degree-->
+  <form onsubmit="return validateDegree()">
+    <fieldset>
+      <legend>Degree</legend>
+      <input type="checkbox" id="SSC"> SSC
+      <input type="checkbox" id="HSC"> HSC
+      <input type="checkbox" id="BSc"> BSc
+    </fieldset>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!--User id-->
+  <form onsubmit="return validateUser()">
+    <label for="uid">User ID:</label>
+    <input type="text" id="uid"><br><br>
+
+    <label for="pic">Photo:</label>
+    <input type="file" id="pic"><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  
+  <script>
+    
+    function toNumber(str) {
+      var n = 0, i = 0, hasDigit = false;
+      while (str[i] !== undefined) {
+        if (str[i] < '0' || str[i] > '9') return -1;
+        n = n * 10 + (str[i] - '0');
+        hasDigit = true;
+        i++;
+      }
+      return hasDigit ? n : 0;
+    }
+
+    function validateName() {
+      var name = document.getElementById("name").value.trim();
+      if (name === "") { alert("Name cannot be empty"); return false; }
+      if (!/^[A-Za-z .-]+$/.test(name)) { alert("Invalid characters in name"); return false; }
+      if (name.split(" ").length < 2) { alert("Name must contain at least two words"); return false; }
+      alert("Valid name!");
+      return true;
+    }
+
+    
+    function validateEmail() {
+      var email = document.getElementById("email").value.trim();
+      if (email === "") { alert("Email cannot be empty"); return false; }
+      var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!pattern.test(email)) { alert("Invalid email format"); return false; }
+      alert("Valid email!");
+      return true;
+    }
+
+   
+    function validateGender() {
+      if (!document.getElementById("male").checked &&
+          !document.getElementById("female").checked &&
+          !document.getElementById("other").checked) {
+        alert("Please select a gender");
+        return false;
+      }
+      alert("Valid selection!");
+      return true;
+    }
+
+    
+    function validateDate() {
+      var dd = toNumber(document.getElementById("dd").value);
+      var mm = toNumber(document.getElementById("mm").value);
+      var yy = toNumber(document.getElementById("yy").value);
+
+      if (dd <= 0 || mm <= 0 || yy <= 0) {
+        alert("All fields must be numeric and non-empty");
+        return false;
+      }
+      if (dd < 1 || dd > 31 || mm < 1 || mm > 12 || yy < 1900 || yy > 2016) {
+        alert("Invalid date range");
+        return false;
+      }
+      alert("Valid date!");
+      return true;
+    }
+
+   
+    function validateBloodGroup() {
+      var b = document.getElementById("blood").value;
+      if (b === "") {
+        alert("Please select a blood group");
+        return false;
+      }
+      alert("Valid blood group!");
+      return true;
+    }
+
+    
+    function validateDegree() {
+      if (!document.getElementById("SSC").checked &&
+          !document.getElementById("HSC").checked &&
+          !document.getElementById("BSc").checked &&
+          !document.getElementById("MSc").checked) {
+        alert("Please select at least one degree");
+        return false;
+      }
+      alert("Valid degree selection!");
+      return true;
+    }
+
+
+    function validateUser() {
+      var uid = toNumber(document.getElementById("uid").value);
+      var pic = document.getElementById("pic").value;
+
+      if (uid <= 0 || uid === -1) {
+        alert("User ID must be a positive number");
+        return false;
+      }
+      if (pic === "") {
+        alert("Please upload a picture");
+        return false;
+      }
+      alert("Valid input!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
