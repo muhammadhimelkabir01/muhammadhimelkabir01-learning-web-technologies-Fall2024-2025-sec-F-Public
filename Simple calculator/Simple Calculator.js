@@ -5,7 +5,7 @@ const btns = [
     7,8,9,"/",
     4,5,6,"*",
     1,2,3,"-",
-    0,".","=","+"
+    0,".","=","+","DEL"
 ];
 
 let currentNumber = 0;      
@@ -27,12 +27,17 @@ btns.forEach(x => {
             currentNumber = currentNumber * 10 + x;
             updateDisplay(currentNumber);
         }
+        else if (x === "DEL")
+        {
+            currentNumber = Math.floor(currentNumber/10);
+            updateDisplay(currentNumber);
+        }
 
         
         else if (x === "+" || x === "-" || x === "*" || x === "/") {
             previousNumber = currentNumber;
             currentNumber = 0;
-            operator = v;
+            operator = x;
         }
 
        
