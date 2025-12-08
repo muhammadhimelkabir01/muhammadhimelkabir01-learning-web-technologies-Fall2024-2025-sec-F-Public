@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Card container */
+        .user-card {
+            width: 280px;
+            background-color: white;
+            border: 2px solid #cccccc;
+            border-radius: 15px;
+            padding: 20px;
+            margin: auto;
+            position: relative;     /* Required for absolute badge */
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+
+        /* Profile photo */
+        .user-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #0077b3;
+        }
+
+        /* Username */
+        .username {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Bio text */
+        .bio {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* Badge */
+        .badge {
+            position: absolute;       /* Positioned inside card */
+            top: 10px;
+            right: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="user-card">
+        <div class="badge">Online</div>
+        <img src="Himel.jpg" alt="User Photo">
+        <div class="username">MD HIMEL KABIR</div>
+        <p class="bio">
+            Web developer, tech enthusiast, and lifelong learner.  
+            Passionate about creating modern web applications.
+        </p>
+    </div>
+
+</body>
+</html>

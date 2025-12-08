@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Contact Widget</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 1500px; /* added height to demonstrate scrolling */
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* Contact Widget Styling */
+        .contact-widget {
+            position: fixed;           /* stays in place */
+            bottom: 20px;              /* bottom-right corner */
+            right: 20px;
+            background-color: #ffffff;
+            border: 2px solid #0059b3;
+            padding: 15px 20px;
+            border-radius: 10px;
+            z-index: 1000;            /* stays on top */
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        /* Hover Effect */
+        .contact-widget:hover {
+            background-color: #e6f2ff;
+        }
+
+        .contact-widget h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #0059b3;
+        }
+
+        .contact-widget a {
+            color: #0059b3;
+            text-decoration: none;
+        }
+
+        .contact-widget a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Welcome to Our Company Page</h1>
+    <p>Scroll down to see that the contact widget remains fixed at the bottom-right corner.</p>
+
+    <!-- Fixed Contact Widget -->
+    <div class="contact-widget">
+        <h3>Contact Us</h3>
+        <p>📞 Phone: 01234-567890</p>
+        <p>📧 Email: <a href="support@example.com">support@example.com</a></p>
+    </div>
+
+</body>
+</html>
