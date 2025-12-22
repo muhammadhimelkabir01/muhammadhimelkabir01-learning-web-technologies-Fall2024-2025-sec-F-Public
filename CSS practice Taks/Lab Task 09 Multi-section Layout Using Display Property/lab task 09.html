@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Task 09 - Display Inline Block</title>
+    <style>
+        .container {
+            width: 100%;
+        }
+
+        .box {
+            display: inline-block;
+            vertical-align: top;
+            padding: 15px;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #f4b4b4;
+        }
+
+        .main {
+            width: 60%;
+            background-color: #b4f4c1;
+        }
+
+        .ads {
+            width: 20%;
+            background-color: #b4c7f4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box sidebar">
+        <h3>Categories</h3>
+        <p>Politics<br>Sports<br>Tech</p>
+    </div>
+
+    <div class="box main">
+        <h3>Main News</h3>
+        <p>This is the main content area for news articles.</p>
+    </div>
+
+    <div class="box ads">
+        <h3>Advertisements</h3>
+        <p>Ad content here</p>
+    </div>
+</div>
+
+</body>
+</html>
