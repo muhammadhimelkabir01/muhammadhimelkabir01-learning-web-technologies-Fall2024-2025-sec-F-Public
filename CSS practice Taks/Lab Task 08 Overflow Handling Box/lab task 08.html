@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Task 08 - Overflow</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+     
+        .visible {
+            overflow: visible;
+        }
+
+  
+        .hidden {
+            overflow: hidden;
+        }
+
+        .scroll {
+            overflow: scroll;
+        }
+
+    
+        .auto {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Overflow: Visible</h2>
+<div class="box visible">
+    This is a very long text. This content will overflow outside the box and remain visible.
+</div>
+
+<h2>Overflow: Hidden</h2>
+<div class="box hidden">
+    This is a very long text. Extra content will be hidden and not visible.
+</div>
+
+<h2>Overflow: Scroll</h2>
+<div class="box scroll">
+    This is a very long text. Scrollbars will always appear even if not needed.
+</div>
+
+<h2>Overflow: Auto</h2>
+<div class="box auto">
+    This is a very long text. Scrollbars appear only when needed.
+</div>
+
+</body>
+</html>
