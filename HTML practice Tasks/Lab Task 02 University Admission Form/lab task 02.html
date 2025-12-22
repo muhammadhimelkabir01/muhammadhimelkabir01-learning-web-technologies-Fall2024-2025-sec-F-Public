@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="University Admission Form">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admission Form</title>
+</head>
+<body>
+
+<h1>University Admission Form</h1>
+
+<form>
+    <fieldset>
+        <legend>Personal Information</legend>
+
+        <label>Full Name:</label><br>
+        <input type="text" maxlength="50" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" required><br><br>
+
+        <label>Date of Birth:</label><br>
+        <input type="date" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" required> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>Academic Information</legend>
+
+        <label>Highest Qualification:</label><br>
+        <select required>
+            <option value="">Select</option>
+            <option>HSC</option>
+            <option>Diploma</option>
+            <option>A Levels</option>
+        </select><br><br>
+
+        <label>Interests:</label><br>
+        <input type="checkbox"> Programming
+        <input type="checkbox"> Networking
+        <input type="checkbox"> AI<br><br>
+
+        <label>Upload Transcript:</label><br>
+        <input type="file" required>
+    </fieldset>
+
+    <br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+
+</body>
+</html>
