@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
     }
 }
 
-// === AJAX HANDLER (JSON) ===
+
 if (isset($_POST['action']) && $_POST['action'] == 'verify_prescription') {
     $pid = $_POST['prescription_id'];
     $data = getPrescriptionData($pid);
